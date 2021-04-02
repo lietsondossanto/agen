@@ -1,7 +1,6 @@
 <h1 align="center">📅 agen</h1>
 
 <p align="center">
-    <img src=”https://img.shields.io/github/languages/count/lietsondossanto/agen” alt="Quantidade de Linguagens">&nbsp;&nbsp;
     <img alt="License" src="https://img.shields.io/badge/Version-1.0-brightgreen">
     <img src="https://img.shields.io/github/last-commit/lietsondossanto/agen" alt="last-communit">&nbsp;&nbsp;
     <img src="https://img.shields.io/github/issues/lietsondossanto/agen" alt="issues">&nbsp;&nbsp;
