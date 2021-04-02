@@ -1,11 +1,11 @@
 <h1 align="center">📅 agen</h1>
 
 <p align="center">
-    <img src=”https://img.shields.io/github/languages/count/lietsondossanto/esg” alt="Quantidade de Linguagens">&nbsp;&nbsp;
-    <img src="https://img.shields.io/github/repo-size/lietsondossanto/esg" alt="Tamanho do projeto">&nbsp;&nbsp;
-    <img src="https://img.shields.io/github/last-commit/lietsondossanto/esg" alt="last-communit">&nbsp;&nbsp;
-    <img src="https://img.shields.io/github/issues/lietsondossanto/esg" alt="issues">&nbsp;&nbsp;
-    <img src="https://img.shields.io/badge/CAMINHO DA LICENÇA" alt="Licença">
+    <img src=”https://img.shields.io/github/languages/count/lietsondossanto/agen” alt="Quantidade de Linguagens">&nbsp;&nbsp;
+    <img src="https://img.shields.io/github/repo-size/lietsondossanto/agen" alt="Tamanho do projeto">&nbsp;&nbsp;
+    <img src="https://img.shields.io/github/last-commit/lietsondossanto/agen" alt="last-communit">&nbsp;&nbsp;
+    <img src="https://img.shields.io/github/issues/lietsondossanto/agen" alt="issues">&nbsp;&nbsp;
+    <img src="https://img.shields.io/badge/LICENSE.md" alt="Licença">
 </p>
 
 <p align="center">
@@ -28,12 +28,20 @@ This project was developed as a study base, I just did it for fun but I hope you
 
 From your command line, first clone Simplefolio:
 
+if you don't have ruby installed type
+```bash
+sudo apt-get install ruby-full
+```
+
 ```bash
 # Clone this repository
 $ git clone https://github.com/lietsondossanto/agen
 
 # Go into the repository
 $ cd agen
+
+# give execution permission
+chmod +x app.rb
 
 # run
 $ ruby app.rb
