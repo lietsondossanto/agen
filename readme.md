@@ -44,7 +44,7 @@ $ ruby app.rb
 
 <h2>Project image</h2>
 
-<img src="img/img.png">
+<img src="img/image.png">
 
 ## 🚀 Technology
 
