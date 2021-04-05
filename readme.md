@@ -17,21 +17,17 @@
 
 ## 💻 About the Project
 
-`Agen` is an agenda via the terminal, when you register a new activity the information is saved in an external notepad, that is, even if you close the terminal or turn off your machine, the information is still saved.
-
-This project was developed as a study base, I just did it for fun but I hope you like it :)
+`Agen` is a schedule, when a new activity is registered, the information is saved in an external text file, that is, even if you close the terminal or turn off your computer, the information will still be accessible.
 
 
 ## How To Use 🔧
 ---
 
-From your command line, first clone Simplefolio:
-
-if you don't have ruby installed type
+if you don't have ruby installed use
 ```bash
 sudo apt-get install ruby-full
 ```
-
+if you already have ruby installed use
 ```bash
 # Clone this repository
 $ git clone https://github.com/lietsondossanto/agen
@@ -46,7 +42,7 @@ chmod +x app.rb
 $ ruby app.rb
 ```
 
-<h2>Image</h2>
+<h2>Project image</h2>
 
 <img src="img/img.png">
 
