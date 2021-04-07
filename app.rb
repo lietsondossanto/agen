@@ -3,16 +3,20 @@ system('clear')
 DAYS_OF_THE_WEEK = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 
 def consult(day)
-    arq = File.readlines("db/#{day}.txt")
-            
+
+    regexp_day = Regexp.new("^#{day}\-")
+
+    arq = File.readlines("db/agen.txt")
+    arq.delete_if {|a| !a.match(regexp_day) }
+
     puts "\n"
     puts "-" * 10
-    puts "Tu tens #{arq.size - 1} atividades para #{day}.\n\n"
+    puts "Tu tens #{arq.size} atividades para #{DAYS_OF_THE_WEEK[day-1]}.\n\n"
 
     count = 0
 
     while count < arq.size do
-        puts "#{count} - #{arq[count]}"
+        puts "#{count} - #{arq[count].gsub(regexp_day,"")}"
         count += 1
     end
 
@@ -29,7 +33,7 @@ def register(day)
             atividade = gets.chomp.to_s
             
             # a = File.readlines("db/id.txt") /* lê o conteudo do arquivo id*/
-            atividade_db = File.new("db/#{day}.txt", "a+")
+            atividade_db = File.new("db/agen.txt", "a+")
             # id_db = File.new("db/id.txt", "r+") /* Abre o arquivo id para leitura e escrita */
 
             # id = a[0].to_i + 1 /* Calcular o id */
@@ -37,7 +41,7 @@ def register(day)
             # id_db.puts(id) /* Escreve no arquivo id o valor da variavel id*/
             # atividade_db.puts({id: id,atividade: atividade}) /* Armazenas em um arquivo o um objecto com o id e a atividade*/ 
             
-            atividade_db.puts(atividade)
+            atividade_db.puts("#{day}-" + atividade)
 
             # id_db.close /* Fecha a arquivo id */
             atividade_db.close
@@ -73,20 +77,8 @@ loop do
         print "  \n>>  "
         opcao = gets.chomp.to_i
 
-        if opcao == 1
-            consult('domingo')            
-        elsif opcao == 2
-            consult('segunda')
-        elsif opcao == 3
-            consult('terca')
-        elsif opcao == 4
-            consult('quarta')
-        elsif opcao == 5
-            consult('quinta')
-        elsif opcao == 6
-            consult('sexta')
-        elsif opcao == 7
-            consult('sabado')
+        if opcao >= 1 && opcao <= 7
+            consult(opcao)
         else
             puts "Opção Inválida!"
         end
@@ -100,35 +92,17 @@ loop do
         print "  \n>>  "
         opcao = gets.chomp.to_i
 
-        if opcao == 1
-            register('domingo')
-        elsif opcao == 2
-            register('segunda')
-        elsif opcao == 3
-            register('terca')
-        elsif opcao == 4
-            register('quarta')
-        elsif opcao == 5
-            register('quinta')
-        elsif opcao == 6
-            register('sexta')
-        elsif opcao == 7
-            register('sabado')
+        if opcao >= 1 && opcao <= 7
+            register(opcao)
         else 
             puts "Opção inválida!"
         end
     
     elsif opcao == 3
 
-        days_of_the_week = ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"]
-
-        for days in days_of_the_week
-
-            day = File.new("db/#{days}.txt", "w")
-            day.puts("")
-            day.close
-
-        end
+        day = File.new("db/agen.txt", "w")
+        day.puts("")
+        day.close
 
         puts "Banco de dados eliminado com êxito :>!"
 
