@@ -1,5 +1,7 @@
 system('clear')
 
+DAYS_OF_THE_WEEK = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
+
 def consult(day)
     arq = File.readlines("db/#{day}.txt")
             
@@ -43,6 +45,12 @@ def register(day)
             puts "Atividade Cadastrada com êxito :)"
 end
 
+def list_options_days_week
+    DAYS_OF_THE_WEEK.each_with_index do |week,index|
+        puts "[#{index+1}] - #{week}"
+    end
+end
+
 loop do
 
     puts "[1] - Consultar atividades"
@@ -58,15 +66,9 @@ loop do
     if opcao == 1
 
         puts "-" * 10
-        puts "\n\n\nQual é o dia da semana que pretende consultar? "
+        puts "\n\n\nQual é o dia da semana que pretende consultar?\n"
 
-        puts "\n[1] - Domingo"
-        puts "[2] - Segunda-feira"
-        puts "[3] - Terça-feira"
-        puts "[4] - Quarta-feira"
-        puts "[5] - Quinta-feira"
-        puts "[6] - Sexta-feira"
-        puts "[7] - Sábado"
+        list_options_days_week
 
         print "  \n>>  "
         opcao = gets.chomp.to_i
@@ -91,15 +93,9 @@ loop do
         
     elsif opcao == 2
         
-        puts "\n\n\nQual é o dia da semana que vai ocorrer?"
+        puts "\n\n\nQual é o dia da semana que vai ocorrer?\n"
 
-        puts "[1] - Domingo"
-        puts "[2] - Segunda-feira"
-        puts "[3] - Terça-feira"
-        puts "[4] - Quarta-feira"
-        puts "[5] - Quinta-feira"
-        puts "[6] - Sexta-feira"
-        puts "[7] - Sábado"
+        list_options_days_week
 
         print "  \n>>  "
         opcao = gets.chomp.to_i
