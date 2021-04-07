@@ -32,18 +32,8 @@ def register(day)
             print "R: "
             atividade = gets.chomp.to_s
             
-            # a = File.readlines("db/id.txt") /* lê o conteudo do arquivo id*/
             atividade_db = File.new("db/agen.txt", "a+")
-            # id_db = File.new("db/id.txt", "r+") /* Abre o arquivo id para leitura e escrita */
-
-            # id = a[0].to_i + 1 /* Calcular o id */
-
-            # id_db.puts(id) /* Escreve no arquivo id o valor da variavel id*/
-            # atividade_db.puts({id: id,atividade: atividade}) /* Armazenas em um arquivo o um objecto com o id e a atividade*/ 
-            
             atividade_db.puts("#{day}-" + atividade)
-
-            # id_db.close /* Fecha a arquivo id */
             atividade_db.close
 
             puts "Atividade Cadastrada com êxito :)"
